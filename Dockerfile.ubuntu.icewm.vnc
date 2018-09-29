@@ -49,6 +49,9 @@ RUN $INST_SCRIPTS/no_vnc.sh
 RUN $INST_SCRIPTS/firefox.sh
 RUN $INST_SCRIPTS/chrome.sh
 
+## Install JDK
+RUN $INST_SCRIPTS/jdk.sh
+
 ### Install IceWM UI
 RUN $INST_SCRIPTS/icewm_ui.sh
 ADD ./src/ubuntu/icewm/ $HOME/
