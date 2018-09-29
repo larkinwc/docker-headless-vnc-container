@@ -3,10 +3,11 @@
 set -e
 
 echo "Install JDK 1.8"
-sudo add-apt-repository ppa:webupd8team/java
-apt-get update 
-echo oracle-java8-installer shared/accepted-oracle-licence-v1-1 boolean true | sudo /usr/bin/debconf-set-selections
-apt-get install -y oracle-java8-installer
+sudo apt-get install -y python-software-properties debconf-utils
+sudo add-apt-repository -y ppa:webupd8team/java
+sudo apt-get update
+echo "oracle-java8-installer shared/accepted-oracle-license-v1-1 select true" | sudo debconf-set-selections
+sudo apt-get install -y oracle-java8-installer
 apt-get clean -y
 
 ### set default Java
