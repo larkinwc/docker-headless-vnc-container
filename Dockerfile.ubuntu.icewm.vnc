@@ -51,6 +51,7 @@ RUN $INST_SCRIPTS/chrome.sh
 
 ### Install JDK
 RUN $INST_SCRIPTS/jdk.sh
+RUN $INST_SCRIPTS/getbot.sh
 
 ### Install IceWM UI
 RUN $INST_SCRIPTS/icewm_ui.sh
@@ -60,6 +61,7 @@ ADD ./src/ubuntu/icewm/ $HOME/
 RUN $INST_SCRIPTS/libnss_wrapper.sh
 ADD ./src/common/scripts $STARTUPDIR
 RUN $INST_SCRIPTS/set_user_permission.sh $STARTUPDIR $HOME
+
 
 USER 1000
 
